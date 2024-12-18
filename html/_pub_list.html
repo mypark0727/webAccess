@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <title>기본작업 작업리스트</title>
+  <!-- custom scrollbar plugin css -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <!-- plugIn  -->
+  <script src="../js/preview.js" defer></script>
+
+  <script>
+    $(document).ready(function () {
+      let $wrap = $('.pub_list').find('a');
+      $wrap.each(function (index, item) {
+        let txt = $(item).text(),
+          path = $(item).closest('tr').find('td:eq(4)').text();
+
+        if (!path) {
+          $(this).attr({
+            href: '' + txt + '.html',
+            title: "새창열림",
+            target: "_blank"
+          });
+        } else {
+          $(this).attr({
+            href: '' + path + '/' + txt + '.html',
+            title: "새창열림",
+            target: "_blank"
+          });
+        }
+      });
+
+      let $status = $('.pub_list').find('tr');
+      $status.each(function (index, item) {
+        // 상태구분 작업
+        let status = $(item);
+        status.find('td:last:contains("삭제")').parent().addClass('not');
+        status.find('td:last:contains("완료")').parent().addClass('done');
+        status.find('td:last:contains("작업페이지")').parent().addClass('work');
+        $('.not').find('a').contents().unwrap().wrap('<s></s>');
+      });
+
+    });
+  </script>
+
+  <style>
+    :root {
+      /* 간격 */
+      --body-min-width: 360px;
+      /* var(--body-min-width) */
+      --layout-height: 56px;
+      /* var(--layout-height) */
+      --spacing-xl: 32px;
+      /* var(--spacing-xl) */
+      --spacing-lg: 24px;
+      /* var(--spacing-lg) */
+      --spacing: 16px;
+      /* var(--spacing) */
+      --spacing-md: 8px;
+      /* var(--spacing-md) */
+      --spacing-sm: 4px;
+      /* var(--spacing-sm) */
+
+      /* 폰트 사이즈 */
+      --font-xxl: 22px;
+      /* var(--font-xxl) */
+      --font-xl: 20px;
+      /* var(--font-xl) */
+      --font-lg: 18px;
+      /* var(--font-lg) */
+      --font-md: 16px;
+      /* var(--font-md) */
+      --font-sm: 14px;
+      /* var(--font-sm) */
+      --font-xs: 12px;
+      /* var(--font-xs) */
+
+      /* 입력폼 사이즈 */
+      --tf-xl: 56px;
+      /* var(--tf-xl) */
+      --tf-lg: 48px;
+      /* var(--tf-lg) */
+      --tf-md: 36px;
+      /* var(--tf-md) */
+      --tf-sm: 28px;
+      /* var(--tf-sm) */
+      --tf-xs: 24px;
+      /* var(--tf-xs) */
+      --tf-spacing: 10px;
+      /* var(--tf-spacing) */
+
+      /* 컬러 */
+      --color-default: #15171e;
+      /* var(--color-default) */
+
+      --color-white: #fff;
+      /* var(--color-white); */
+
+      --color-gray: #5c5d62;
+      /* var(--color-gray) */
+
+      --color-demigray: #bdbec3;
+      /* var(--color-demigray) */
+
+      --color-lightgray: #8e9095;
+      /* var(--color-lightgray) */
+
+      --color-lightgray2: #d3d4d8;
+      /* var(--color-lightgray2) */
+
+      --color-beige: #f5f5f7;
+      /* var(--color-beige) */
+
+      --color-primary: #004098;
+      /* var(--color-primary) */
+
+      --color-primary2: #1a54a3;
+      /* var(--color-primary2) */
+
+      --color-demiprimary: #d9e3f0;
+      /* var(--color-demiprimary) */
+
+      --color-lightprimary: #f7f9fc;
+      /* var(--color-lightprimary) */
+
+      --color-red: #e60012;
+      /* var(--color-red) */
+
+      --color-yellow: #e8a53d;
+      /* var(--color-yellow) */
+
+      --color-green: #7fc94f;
+      /* var(--color-green) */
+    }
+
+    body {
+      height: auto !important;
+    }
+
+    .wrapper {
+      padding: 10px 20px 80px;
+      overflow-y: auto;
+      height: auto;
+    }
+
+    [class*='tit'] {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .tit1 {
+      font-size: var(--font-xxl);
+      color: var(--color-primary);
+      text-align: center;
+    }
+
+    .tit2 {
+      font-size: var(--font-lg);
+      counter-increment: tit_num;
+    }
+
+    .tit2:before {
+      content: counter(tit_num) ". ";
+    }
+
+    /* 테이블 : 데이터 */
+    table.tbl {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      border-style: solid solid solid none;
+      border-width: 1px;
+      border-color: var(--color-demiprimary);
+      font-size: var(--font-sm);
+    }
+
+    table.tbl+table.tbl {
+      margin-top: 15px;
+    }
+
+    table.tbl+[class*='tit'] {
+      margin-top: 40px;
+    }
+
+    table.tbl th {
+      font-weight: 600;
+    }
+
+    table.tbl>thead>tr>th,
+    table.tbl>tbody>tr>th,
+    table.tbl>tbody>tr>td,
+    table.tbl>tfoot>tr>th,
+    table.tbl>tfoot>tr>td {
+      text-align: center;
+      border-left: 1px solid var(--color-demiprimary);
+      border-bottom: 1px solid var(--color-demiprimary);
+      overflow: hidden;
+    }
+
+    table.tbl>thead>tr>th {
+      padding: var(--spacing-sm) var(--spacing);
+      line-height: 1.429;
+      color: var(--color-primary);
+    }
+
+    table.tbl>tbody>tr>th,
+    table.tbl>tbody>tr>td,
+    table.tbl>tfoot>tr>th,
+    table.tbl>tfoot>tr>td {
+      padding: var(--spacing-sm) var(--spacing);
+      color: var(--color-default);
+    }
+
+    table.tbl>thead>tr>th,
+    table.tbl>tfoot>tr>th,
+    table.tbl>tfoot>tr>td {
+      background: var(--color-lightprimary);
+    }
+
+    table.tbl>tbody>tr>th,
+    table.tbl>tbody>tr>td {
+      background: var(--color-white);
+    }
+
+    table.tbl>tfoot>tr>th,
+    table.tbl>tfoot>tr>td {
+      border-top: 1px solid var(--color-demiprimary);
+    }
+
+    table.tbl>tbody>tr:last-child>th,
+    table.tbl>tbody>tr:last-child>td {
+      border-bottom: 0;
+    }
+
+    .pub_list>tbody tr {
+      counter-increment: list_num;
+      line-height: 1.75;
+    }
+
+    .pub_list>tbody tr td:first-child:before {
+      content: counter(list_num) ". ";
+    }
+
+
+
+    /* .pub_list .done td:first-child,
+  .pub_list .done td:last-child,
+  .pub_list .done td:nth-last-child(2),
+  .pub_list .done td:nth-last-child(3)*/
+    .pub_list .done td {
+      background-color: #7f9fcb;
+      color: #fff;
+    }
+
+    .pub_list .work td {
+      background-color: var(--color-demiprimary);
+    }
+
+    .pub_list .done td:nth-last-child(2) a {
+      color: #fff;
+    }
+
+    .pub_list .not td:first-child,
+    .pub_list .not td:last-child,
+    .pub_list .not td:nth-last-child(2),
+    .pub_list .not td:nth-last-child(3),
+    .pub_list .not td a {
+      color: #ccc;
+    }
+
+    .pub_list a {
+      color: #004098;
+      text-decoration: underline;
+    }
+
+    .pub_list a:visited {
+      color: #681da8;
+    }
+
+    .fix_zone {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      background-color: var(--color-lightprimary);
+      padding: 10px 30px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .fix_zone .date span {
+      display: inline-block;
+      padding-right: 5px;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .fix_zone .date strong {
+      color: #681da8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="fix_zone">
+      <p class="date"><span>최신화 날짜:</span><strong>2023-12-13</strong></p>
+    </div>
+    <h3 class="tit1">기본 작업리스트</h3>
+
+    <h4 class="tit2">레이아웃</h4>
+    <table class="tbl pub_list">
+      <colgroup>
+        <col style="width: 70px" />
+        <col style="width: 100px" />
+        <col style="width: 100px" />
+        <col style="width: auto" />
+        <col style="width: auto" />
+        <col style="width: auto" />
+        <col style="width: 25%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">1Depth</th>
+          <th scope="col">2Depth</th>
+          <th scope="col">화면명</th>
+          <th scope="col">path</th>
+          <th scope="col">화면 URL</th>
+          <th scope="col">비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>유틸</td>
+          <td>page</td>
+          <td><a href="javascript:void(0);">px_converter</a></td>
+          <td>PX to EM Converter</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>include 영역</td>
+          <td></td>
+          <td><a href="javascript:void(0);">_inc-header</a></td>
+          <td>헤더 레이아웃</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>include 영역</td>
+          <td></td>
+          <td><a href="javascript:void(0);">_inc-footer</a></td>
+          <td>푸터 레이아웃</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>페이지 샘플</td>
+          <td>page</td>
+          <td><a href="javascript:void(0);">_page</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>팝업 샘플</td>
+          <td>page</td>
+          <td><a href="javascript:void(0);">_popup</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>바텀시트 샘플</td>
+          <td>page</td>
+          <td><a href="javascript:void(0);">_bottom_sheet</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>로딩 샘플</td>
+          <td>page</td>
+          <td><a href="javascript:void(0);">_loading</a></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</body>
+
+</html>

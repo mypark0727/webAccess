@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<title>로딩 페이지</title>
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="autocomplete" content="off" />
+
+	<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.min.css" />
+	<script type="text/javascript" charset="utf-8" src="../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../../js/common.js" defer></script>
+	<script type="text/javascript" src="../../js/swiper.min.js"></script>
+
+	<!-- 레이아웃 세팅(퍼블리싱 only) -->
+	<script src="../../js/ui_layout_setting.js" defer></script>
+
+	<!-- plugIn  -->
+
+	<script type="text/javascript">
+		$("document").ready(function () {
+			let $loading = $('.loading');
+			$(".btn").on("click", function () {
+				$loading.css('display', 'block');
+			});
+			$loading.on("click", function () {
+				$(this).css('display', 'none');
+			});
+		});
+	</script>
+
+	<style>
+		/* style */
+	</style>
+</head>
+
+<body>
+	<!-- header Include 영역 -->
+	<div class="header"></div>
+	<!-- //header Include 영역 -->
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- content 영역-->
+
+		<!-- section -->
+		<div class="section">
+			<button type="button" class="btn btn_sm btn_primary">loading</button>
+		</div>
+		<!-- //section -->
+
+
+
+		<!--// content 영역 -->
+
+	</div>
+	<!--// wrapper -->
+
+
+
+	<!-- footer Include 영역 -->
+	<div class="footer"></div>
+	<!--// footer Include 영역 -->
+	<div class="loading">
+		<img src="../../img/common/loading.gif">
+	</div>
+
+</body>
+
+</html>

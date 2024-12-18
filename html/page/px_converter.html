@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<title>px-em 변환</title>
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="autocomplete" content="off" />
+
+	<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.min.css" />
+	<script type="text/javascript" charset="utf-8" src="../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../../js/common.js" defer></script>
+	<script type="text/javascript" src="../../js/swiper.min.js"></script>
+
+	<!-- 레이아웃 세팅(퍼블리싱 only) -->
+	<script src="../../js/ui_layout_setting.js" defer></script>
+
+	<!-- plugIn  -->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			let basePx = $('#basePxInput').val();
+
+			// 기준 PX 값이 변경될 때마다 갱신
+			$('#basePxInput').on('input', function () {
+				basePx = $(this).val();
+				resetResult();
+			});
+
+			// 입력값이 변경될 때마다 변환 수행
+			$('#pxToEmInput, #emToPxInput').on('change', function () {
+				convertValues();
+			});
+
+			// Reset 버튼 클릭 이벤트
+			$('#resetButton').click(function () {
+				resetResult();
+				$('#pxToEmInput, #emToPxInput').val('');
+			});
+
+			function convertValues() {
+				const pxToEmValue = $('#pxToEmInput').val();
+				const emToPxValue = $('#emToPxInput').val();
+
+				if (pxToEmValue !== '') {
+					const emValue = pxToEmValue / basePx;
+					displayResult(emValue.toFixed(3) + 'em');
+				} else if (emToPxValue !== '') {
+					const pxValue = emToPxValue * basePx;
+					displayResult(pxValue.toFixed(0) + 'px');
+				} else {
+					resetResult();
+				}
+			}
+
+			function displayResult(value) {
+				$('#resultOutput').text(`${value}`);
+			}
+
+			function resetResult() {
+				$('#resultOutput').text('');
+			}
+		});
+	</script>
+
+
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<!-- header Include 영역 -->
+	<div class="header"></div>
+	<!-- //header Include 영역 -->
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- content 영역-->
+
+		<!-- section -->
+		<div class="section">
+			<h3 class="tit1 txt_c">PX to EM Converter</h3>
+			<div id="converter" style="margin:0 auto; max-width:500px;">
+				<label class="tf_t" for="basePxInput">기준 PX</label>
+				<div class="form_group">
+					<input type="number" class="tf" id="basePxInput" placeholder="Enter base pixels" value="16">
+				</div>
+
+				<strong class="tf_t">변환</strong>
+				<div class="form_group">
+					<input type="number" class="tf" id="pxToEmInput" placeholder="PX에서 EM">
+					<span class="dashed">px</span>
+					<input type="number" class="tf" id="emToPxInput" placeholder="EM에서 PX">
+					<span class="dashed">em</span>
+				</div>
+				<div class="MGT20 txt_c">
+					<button id="resetButton" class="btn btn_primary btn_outline round wd100">초기화</button>
+				</div>
+				<h4 class="tit3 MAT20">결과 값</h4>
+				<p id="resultOutput" class="txt_lg "></p>
+			</div>
+
+		</div>
+		<!-- //section -->
+
+
+
+		<!--// content 영역 -->
+
+	</div>
+	<!--// wrapper -->
+
+
+
+	<!-- footer Include 영역 -->
+	<div class="footer"></div>
+	<!--// footer Include 영역 -->
+
+
+</body>
+
+</html>

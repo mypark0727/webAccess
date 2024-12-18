@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>마크업 가이드</title>
+
+  <!-- style -->
+  <link rel="stylesheet" href="./css/style_guide.css" />
+
+  <!-- JavaScript -->
+  <script src="./js/jquery-3.3.1.js"></script>
+  <script src="./js/jquery-ui.js"></script>
+
+  <!-- I.N.UIX Components -->
+  <script src="./js/common.js"></script>
+
+
+  <!-- 가이드  -->
+  <link rel="stylesheet" href="./_guide/css/style.css" />
+  <link rel="stylesheet" href="./_guide/plugins/shCoreDefault.css" />
+  <script src="./_guide/plugins/shCore.js"></script>
+  <script src="./_guide/plugins/shBrushXml.js"></script>
+  <script src="./_guide/plugins/shBrushCss.js"></script>
+  <script src="./_guide/plugins/shBrushJScript.js"></script>
+  <script src="./_guide/js/ui_html_guide.js"></script>
+  <style>
+    body {
+      height: auto !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper wrapper_html_guide">
+    <aside id="guide_nav">
+      <h1 class="sidebar-tit txt_title">
+        <a href="#content" class="title">마크업가이드</a>
+        <button type="button" class="btn_type bg_primary">★</button>
+        <a href="javascript:void(0);" class="btn btn_collaspe d_down_md">
+          <span class="open">
+            <i class="ico ico_xs_menu"></i>
+          </span>
+          <span class="close">
+            <i class="ico ico_times_white"></i>
+          </span>
+        </a>
+      </h1>
+      <h2 class="nav-tit">컴포넌트</h2>
+      <nav class="component_list"></nav>
+    </aside>
+    <article id="content">
+      <div class="cont_header">
+        <h1 class="tit1 MAT80">마크업 가이드</h1>
+      </div>
+      <div class="cont_body">
+        <div class="container">
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="util">유틸리티</h3>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <h4 class="tit2">가로 정렬 text-align</h4>
+                  <div class="examples">
+                    <p class="txt_l">.txt_l</p>
+                    <p class="txt_c">.txt_c</p>
+                    <p class="txt_r">.txt_r</p>
+                    <p class="txt_j">. txt _ j</p>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;p class="txt_l"&gt;&lt;/p&gt;
+                      &lt;p class="txt_c"&gt;&lt;/p&gt;
+                      &lt;p class="txt_r"&gt;&lt;/p&gt;
+                      &lt;p class="txt_j"&gt;&lt;/p&gt;                      
+                  </pre>
+                </div>
+                <div class="col_item">
+                  <h4 class="tit2">세로 정렬 vertical-align</h4>
+                  <div class="examples txt_c MAB70">
+                    <span class="lab_status bg_gray v_top">.v_top</span>
+                    <span class="lab_status bg_gray v_mid">.v_mid</span>
+                    <span class="lab_status bg_gray v_bot">.v_bot</span>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                    &lt;span class="v_top"&gt;&lt;/span&gt;
+                    &lt;span class="v_mid"&gt;&lt;/span&gt;
+                    &lt;span class="v_bot"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  <h4 class="tit2">float</h4>
+                  <div class="examples">
+                    <p class="txt_c">컨테이너 .clfx</p>
+                    <br />
+                    <div class="clfx">
+                      <p class="f_l">.f_l</p>
+                      <p class="f_r">.f_r</p>
+                    </div>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;div class="clfx"&gt;
+                        &lt;p class="f_l"&gt;&lt;/p&gt;
+                        &lt;p class="f_r"&gt;&lt;/p&gt;
+                      &lt;/div&gt;
+                    </pre>
+                </div>
+              </div>
+            </div>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <h4 class="tit2">디스플레이</h4>
+                  <pre class="brush:html" title="HTML">
+                    &lt;!-- display: none --&gt;
+                    &lt;span class="d_n"&gt;&lt;/span&gt; 
+                   
+                    &lt;!-- display: block --&gt;
+                    &lt;span class="d_b"&gt;&lt;/span&gt;  
+                   
+                    &lt;!-- display: inline --&gt;
+                    &lt;span class="d_i"&gt;&lt;/span&gt;
+                   
+                    &lt;!-- display: inline-block --&gt;
+                    &lt;span class="d_i_b"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  <h4 class="tit2">IR 기법 적용 (웹 접근성)</h4>
+                  <pre class="brush:html" title="HTML">
+                    &lt;!-- 화면상에서는 보이지않고, 스크린 리더에서만 읽도록 처리 --&gt;
+                    &lt;span class="sr_only"&gt;&lt;/span&gt;
+                   
+                    &lt;!-- 블록 레벨에도 사용 가능 --&gt;
+                    &lt;div class="sr_only"&gt;
+                      &lt;p&gt;text&lt;/p&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;text&lt;/li&gt;
+                        &lt;li&gt;text&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="MAT20">
+              <h4 class="tit2">간격 Preset</h4>
+              <ul class="list list1 MAB10">
+                <li>
+                  숫자 1 증가시 1px씩 증가, 최대 100까지 지원 (0 ~ 100px)
+                  <br />
+                  <ul class="list list2">
+                    <li>20px 부터는 5px씩 증가</li>
+                  </ul>
+                </li>
+                <li>
+                  전체 MGN / PAD : margin / padding 의 경우 5px 단위로 증가
+                </li>
+                <li>
+                  주요 컴포넌트는 고유 간격을 포함하고 있으므로 가급적 기본
+                  간격대로 사용하되 특수 디자인에는 멀티클래스로 조합 활용
+                </li>
+              </ul>
+              <div class="cont_row">
+                <div class="inner">
+                  <div class="col_item">
+                    <div class="examples">
+                      <h5 class="txt_md MAB10">Margin</h5>
+                      <p>
+                        .MGN0 ~ 100 / .MAT0 ~ 100 / .MAR0 ~ 100 / .MAM0 ~ 100
+                        / .MAL0 ~ 100
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col_item">
+                    <div class="examples">
+                      <h5 class="txt_md MAB10">Padding</h5>
+                      <p>
+                        .PAD0 ~ 100 / .PAT0 ~ 100 / .PAR0 ~ 100 / .PAM0 ~ 100
+                        / .PAL0 ~ 100
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="typo">
+              타이포 <small class="txt_primary necessary">.tit* /.txt_*</small>
+            </h3>
+            <div class="box_html_guide MAB25">
+              <ul class="list list1">
+                <li>
+                  본문 타이틀<strong class="txt_primary">(.tit*)</strong> 기본설정- <strong class="txt_red">두께:
+                    600(Bold)</strong>, <strong class="txt_red">간격: 0.727em 0.727em (tit1기준 16px)</strong>, 행간 1, 자간
+                  -0.6px
+                </li>
+                <li>
+                  본문 스타일<strong class="txt_primary">(.txt_*)</strong> 기본설정- 사이즈 16px(xl 사이즈), 두께 400(Medium), 행간 1.75,
+                  자간 0
+                </li>
+                <li>
+                  영문, 숫자, 한글 : 노토 산스 / 기본 적용되어 있으므로 영문
+                  및 숫자에 개별 스타일링할 필요 없음
+                </li>
+              </ul>
+            </div>
+            <h4 class="tit1">본문 타이틀</h4>
+            <ul class="list list1 MAB10">
+              <li>타이틀의 글꼴은 상하단 간격까지 기본 탑재됨</li>
+              <li>콘텐츠 영역 내 헤딩 요소는 맥락에 맞춰 h1 ~ h6 로 마크업하며, class는 디자인에 맞추어 매칭</li>
+            </ul>
+            <div class="examples">
+              <h1 class="tit1">
+                .tit1
+                <span class="txt_lightgray">= size:22px</span>
+              </h1>
+              <h2 class="tit2">
+                .tit2
+                <span class="txt_lightgray">= size:18px</span>
+              </h2>
+              <h3 class="tit3">
+                .tit3
+                <span class="txt_lightgray">= size:16px</span>
+              </h3>
+              <h4 class="tit4">
+                .tit4
+                <span class="txt_lightgray">= size:14px</span>
+              </h4>
+            </div>
+            <pre class="brush:html" title="HTML">
+                &lt;h1 class="tit1"&gt;&lt;/h1&gt;
+                &lt;h2 class="tit1"&gt;&lt;/h2&gt;
+                &lt;h3 class="tit2"&gt;&lt;/h3&gt;
+                &lt;h4 class="tit3"&gt;&lt;/h4&gt;
+                &lt;h5 class="tit4"&gt;&lt;/h5&gt;
+            </pre>
+
+            <h4 class="tit1">본문 타이포</h4>
+            <p class="MAB10">
+              상하단 간격 미포함되어있으므로 간격 설정은 멀티클래스 조합 사용
+            </p>
+            <div class="examples">
+              <p class="txt_xl">
+                .txt_xl
+                <span class="txt_lightgray">= size:20px</span>
+              </p>
+              <p class="txt_lg">
+                .txt_lg
+                <span class="txt_lightgray">= size:18px</span>
+              </p>
+              <p class="txt_md">
+                .txt_md
+                <span class="txt_lightgray">= size:16px</span>
+                <strong class="txt_red">(스타일 미지정시 기본)</strong>
+              </p>
+              <p class="txt_sm">
+                .txt_sm
+                <span class="txt_lightgray">= size:14px</span>
+              </p>
+              <p class="txt_xs">
+                .txt_xs
+                <span class="txt_lightgray">= size:12px</span>
+              </p>
+              <p class="MAT10">
+                <strong class="txt_xl">한 문장 내에</strong> 폰트 사이즈
+                <span class="txt_lg">혼용</span>
+                <span class="txt_md">사용</span> <span class="txt_sm">예시</span>
+              </p>
+            </div>
+            <pre class="brush:html" title="HTML">
+							&lt;p class="txt_xl"&gt;&lt;/p&gt;
+							&lt;p class="txt_lg"&gt;&lt;/p&gt;
+							&lt;strong class="txt_md"&gt;&lt;/strong&gt;
+							&lt;span class="txt_sm"&gt;&lt;/span&gt;
+							&lt;span class="txt_xs"&gt;&lt;/span&gt;
+            </pre>
+
+            <h4 class="tit1">글꼴 두께</h4>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <p class="txt_light examples PAD10">
+                    <span class="txt_primary">.txt_light</span>
+                    <span>두께 200</span>
+                  </p>
+                  <pre class="brush:html" title="HTML">
+										&lt;span class="txt_light"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  <p class="txt_normal examples PAD10">
+                    <span class="txt_primary">.txt_normal</span>
+                    <span>두께 400</span>
+                  </p>
+                  <pre class="brush:html" title="HTML">
+										&lt;span class="txt_normal"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  <p class="txt_medium examples PAD10">
+                    <span class="txt_primary">.txt_medium</span>
+                    <span>두께 500</span>
+                    <strong class="txt_red">(기본)</strong>
+                  </p>
+                  <pre class="brush:html" title="HTML">
+                    &lt;span class="txt_medium"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  <p class="txt_bold examples PAD10">
+                    <span class="txt_primary">.txt_bold</span>
+                    <span>두께 600</span>
+                  </p>
+                  <pre class="brush:html" title="HTML">
+                    &lt;span class="txt_bold"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="tit1">글꼴 색상</h4>
+            <div class="examples txt_xl txt_bold">
+              <div>
+                <span class="txt_default">.txt_default</span>
+                <small class="txt_red txt_sm txt_bold">(스타일 미지정시 기본)</small>
+              </div>
+              <div class="MAT10">
+                <span class="txt_gray">.txt_gray</span>
+                <span class="txt_lightgray">.txt_lightgray</span>
+                <span class="txt_white bg_gray PAL5 PAR5">.txt_white</span>
+
+              </div>
+              <div class="MAT10">
+                <span class="txt_primary">.txt_primary</span>
+                <span class="txt_red">.txt_red</span>
+                <span class="txt_yellow">.txt_yellow</span>
+                <span class="txt_green">.txt_green</span>
+              </div>
+            </div>
+            <pre class="brush:html" title="HTML">
+							&lt;span class="txt_default"&gt;&lt;/span&gt;							
+							&lt;span class="txt_gray"&gt;&lt;/span&gt;
+							&lt;span class="txt_lightgray"&gt;&lt;/span&gt;
+							&lt;span class="txt_white"&gt;&lt;/span&gt;
+							&lt;span class="txt_primary"&gt;&lt;/span&gt;							
+							&lt;span class="txt_red"&gt;&lt;/span&gt;
+							&lt;span class="txt_yellow"&gt;&lt;/span&gt;
+							&lt;span class="txt_green"&gt;&lt;/span&gt;
+            </pre>
+
+            <h4 class="tit1">기타</h4>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <s class="txt_red">취소선</s> 사용시 s 태그
+                  <pre class="brush:html" title="HTML">
+                    &lt;s&gt;취소선&lt;/s&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  강조의 의미로 <u class="txt_red">밑줄</u> 사용시 u 태그
+                  <pre class="brush:html" title="HTML">
+                    &lt;u&gt;밑줄&lt;/u&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  링크 사용시 <a href="#;" class="link txt_yellow">.link</a>
+                  <pre class="brush:html" title="HTML">
+                    &lt;a href="#;" class="link"&gt;링크주소&lt;/a&gt;
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  중요표시 <span class="txt_refer">txt_refer</span>
+                  <pre class="brush:html" title="HTML">
+                    &lt;span class="txt_refer"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  에러표시 <span class="txt_error d_i_b MAB0">txt_error</span>
+                  <pre class="brush:html" title="HTML">
+                    &lt;span class="txt_error"&gt;&lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  필수표시 <span class="required">필수</span>
+                  <pre class="brush:html" title="HTML">
+                    필수요소&lt;span class="required"&gt;필수&lt;/span&gt;
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="bullet">불릿 시스템<small class="txt_primary">.list.list*</small></h3>
+            <div class="cont_row MAT20">
+              <div class="inner">
+                <div class="col_item">
+                  <div class="examples">
+                    <ul class="list list1">
+                      <li>list1</li>
+                      <li>
+                        list1
+                        <ul class="list list2">
+                          <li>list2</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;ul class="list list1"&gt;
+                        &lt;li&gt;list1&lt;/li&gt;
+                        &lt;li&gt;list1
+                          &lt;ul class="list list2"&gt;
+                            &lt;li&gt;list2&lt;/li&gt;
+                          &lt;/ul&gt;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                    </pre>
+                </div>
+                <div class="col_item">
+                  <div class="examples">
+                    <ul class="list num_list">
+                      <li>num_list</li>
+                      <li>num_list
+                        <ul class="list list2">
+                          <li>list2</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;ul class="list num_list"&gt;
+                        &lt;li&gt;num_list&lt;/li&gt;
+                        &lt;li&gt;list1
+                          &lt;ul class="list list2"&gt;
+                            &lt;li&gt;list2&lt;/li&gt;
+                          &lt;/ul&gt;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                    </pre>
+                </div>
+                <div class="col_item">
+                  <div class="examples">
+                    <ul class="list num_list_circle">
+                      <li>num_list_circle</li>
+                      <li>
+                        list1
+                        <ul class="list list2">
+                          <li>list2</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;ul class="list num_list_circle"&gt;
+                        &lt;li&gt;num_list_circle&lt;/li&gt;
+                        &lt;li&gt;list1
+                          &lt;ul class="list list2"&gt;
+                            &lt;li&gt;list2&lt;/li&gt;
+                          &lt;/ul&gt;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                    </pre>
+                </div>
+                <div class="col_item">
+                  <div class="examples">
+                    <ul class="list list_sup">
+                      <li>list_sup</li>
+                      <li>
+                        list1
+                        <ul class="list list2">
+                          <li>list2</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;ul class="list list_sup"&gt;
+                        &lt;li&gt;list_sup&lt;/li&gt;
+                        &lt;li&gt;list1
+                          &lt;ul class="list list2"&gt;
+                            &lt;li&gt;list2&lt;/li&gt;
+                          &lt;/ul&gt;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                    </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="tbl">
+              테이블
+              <small class="txt_primary">.tbl</small>
+            </h3>
+
+            <h4 class="tit1">기본형</h4>
+            <div class="examples">
+              <div class="tbl_wrap">
+                <table class="tbl">
+                  <caption class="sr_only">
+                    ${표제목}
+                  </caption>
+                  <colgroup>
+                    <col style="width: auto">
+                    <col style="width: auto">
+                    <col style="width: auto">
+                    <col style="width: auto">
+                    <col style="width: auto">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" colspan="2">Thead</th>
+                      <th scope="col">제목</th>
+                      <th scope="col" colspan="2">제목</th>
+                    </tr>
+                    <tr>
+                      <th scope="col" rowspan="2">제목이<br>두줄입니다</th>
+                      <th scope="col" rowspan="2">제목</th>
+                      <th scope="col" rowspan="2">제목</th>
+                      <th scope="col">제목</th>
+                      <th scope="col">제목</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">제목</th>
+                      <th scope="col">제목</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>
+                        <p class="txt_j">이 름</p>
+                      </th>
+                      <td>데이터</td>
+                      <td>데이터</td>
+                      <td>데이터</td>
+                      <td>데이터</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>
+                        <p class="txt_j">전 화 번 호</p>
+                      </th>
+                      <td>데이터</td>
+                      <td>데이터</td>
+                      <td>데이터</td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <pre class="brush:html" title="HTML">
+              &lt;div class="tbl_wrap"&gt;                
+                &lt;table class="tbl"&gt;
+                  &lt;caption class="sr_only"&gt;
+                  ${표제목}
+                  &lt;/caption&gt;
+                  &lt;colgroup&gt;                     
+                  &lt;col style="width: auto"&gt;
+                  &lt;col style="width: auto"&gt;
+                  &lt;col style="width: auto"&gt;
+                  &lt;col style="width: auto"&gt;
+                  &lt;col style="width: auto"&gt;                      
+                  &lt;/colgroup&gt;
+                  &lt;thead&gt;
+                    &lt;tr&gt;
+                      &lt;th scope="col" colspan="2"&gt;Thead&lt;/th&gt;
+                      &lt;th scope="col"&gt;제목&lt;/th&gt;
+                      &lt;th scope="col" colspan="2"&gt;제목&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;th scope="col" rowspan="2"&gt;제목이&lt;br&gt;두줄입니다&lt;/th&gt;
+                      &lt;th scope="col" rowspan="2"&gt;제목&lt;/th&gt;
+                      &lt;th scope="col" rowspan="2"&gt;제목&lt;/th&gt;                        
+                      &lt;th scope="col"&gt;제목&lt;/th&gt;
+                      &lt;th scope="col"&gt;제목&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;th scope="col"&gt;제목&lt;/th&gt;
+                      &lt;th scope="col"&gt;제목&lt;/th&gt;                        
+                    &lt;/tr&gt;
+                  &lt;/thead&gt;
+                  &lt;tbody&gt;
+                    &lt;tr&gt;
+                      &lt;th&gt;&lt;p class="txt_j"&gt;이 름&lt;/p&gt;&lt;/th&gt;
+                      &lt;td&gt;데이터&lt;/td&gt;
+                      &lt;td&gt;데이터&lt;/td&gt;
+                      &lt;td&gt;데이터&lt;/td&gt;
+                      &lt;td&gt;데이터&lt;/td&gt;
+                    &lt;/tr&gt;                            
+                  &lt;/tbody&gt;
+                  &lt;tfoot&gt;
+                    &lt;tr&gt;
+                      &lt;th&gt;&lt;p class="txt_j"&gt;전 화 번 호&lt;/p&gt;&lt;/th&gt;
+                      &lt;td&gt;데이터&lt;/td&gt;
+                      &lt;td&gt;데이터&lt;/td&gt;
+                      &lt;td&gt;데이터&lt;/td&gt;
+                      &lt;td&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tfoot&gt;
+                &lt;/table&gt;
+              &lt;/div&gt;
+						</pre>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="bgcolor">
+              색상 정의<small class="txt_primary">.bg_* / .lab_status</small>
+            </h3>
+            <div class="box_html_guide">
+              <ul class="list list1">
+                <li>
+                  .box 와 조합하거나 table 특정 셀 강조, svg 아이콘 색상 변경시 활용
+                </li>
+              </ul>
+            </div>
+            <h4 class="tit1 MAT20">백그라운드</h4>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <h4 class="tit2">그레이 계열</h4>
+                  <div class="examples">
+                    <div class="bg_setting">
+                      <span class="bg_default">.bg_default</span>
+                      <span class="bg_white">.bg_white</span>
+                      <span class="bg_gray">.bg_gray</span>
+                      <span class="bg_demigray">.bg_demigray</span>
+                      <span class="bg_lightgray">.bg_lightgray</span>
+                    </div>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;div class="bg_default"&gt;&lt;/div&gt;
+                      &lt;div class="bg_white"&gt;&lt;/div&gt;
+                      &lt;div class="bg_gray"&gt;&lt;/div&gt;
+                      &lt;div class="bg_demigray"&gt;&lt;/div&gt;
+                      &lt;div class="bg_lightgray"&gt;&lt;/div&gt;
+                    </pre>
+                </div>
+                <div class="col_item">
+                  <h4 class="tit2">주색상 계열</h4>
+                  <div class="examples">
+                    <div class="bg_setting">
+                      <span class="bg_primary">.bg_primary</span>
+                      <span class="bg_primary2">.bg_primary2</span>
+                      <span class="bg_demiprimary">.bg_demiprimary</span>
+                      <span class="bg_lightprimary">.bg_lightprimary</span>
+                    </div>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+										&lt;div class="bg_primary"&gt;&lt;/div&gt;
+										&lt;div class="bg_demiprimary"&gt;&lt;/div&gt;
+										&lt;div class="bg_lightprimary"&gt;&lt;/div&gt;</pre>
+                </div>
+
+                <div class="col_item">
+                  <h4 class="tit2">원색 계열</h4>
+                  <div class="examples">
+                    <div class="bg_setting">
+                      <span class="bg_red">.bg_red</span>
+                      <span class="bg_yellow">.bg_yellow</span>
+                      <span class="bg_green">.bg_green</span>
+                    </div>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+										&lt;span class="bg_red"&gt;&lt;/span&gt;
+										&lt;span class="bg_yellow"&gt;&lt;/span&gt;
+										&lt;span class="bg_green"&gt;&lt;/span&gt;</pre>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="tit1 MAT20">상태 컬러값 유형</h4>
+            <div class="examples">
+              <span class="lab_status outline_default">default</span>
+              <span class="lab_status outline_gray">gray</span>
+              <span class="lab_status outline_lightgray">lightgray</span>
+              <span class="lab_status outline_primary">primary</span>
+              <span class="lab_status outline_red">red</span>
+              <span class="lab_status outline_yellow">yellow</span>
+              <span class="lab_status outline_green">green</span>
+            </div>
+            <pre class="brush:html" title="HTML">
+                <!-- .lab_status 조합 사용 -->
+                &lt;span class="lab_status outline_default"&gt;&lt;/span&gt;
+                &lt;span class="lab_status outline_gray"&gt;&lt;/span&gt;
+                &lt;span class="lab_status outline_lightgray"&gt;&lt;/span&gt;
+                &lt;span class="lab_status outline_primary"&gt;&lt;/span&gt;
+                &lt;span class="lab_status outline_red"&gt;&lt;/span&gt;
+                &lt;span class="lab_status outline_yellow"&gt;&lt;/span&gt;
+                &lt;span class="lab_status outline_green"&gt;&lt;/span&gt;
+              </pre>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="icon">
+              아이콘 <small class="txt_primary">.ico.ico_*</small>
+            </h3>
+            <div class="box_html_guide">
+              <ul class="list list1">
+                <li>
+                  이미지 및 클래스 네이밍 룰 :
+                  <strong>ico_키워드_방향_크기(형태)_컬러.svg</strong>
+                  <ul class="list list3">
+                    <li>
+                      이미지 저장 위치 : /<strong class="txt_red">resources/img/common</strong>
+                    </li>
+                    <li>
+                      크기 클래스 정의:
+                      <strong class="txt_red">ico_xl / ico_lg / ico_md / ico_sm</strong>
+                    </li>
+                    <li>
+                      투명배경으로 PNG24 저장 or svg 저장 <br>
+                      가로/세로 사이즈 규격이 없이 아이콘은 여백없이 fit 하게 슬라이싱<br>
+                      background 사이즈 세로 기준으로 크기 조절
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="cont_row MAT20 MAB10">
+              <div class="inner">
+                <div class="col_item examples txt_sm">
+                  <ul class="ico_list">
+                    <li>
+                      <span class="icon_area">
+                        <i class="ico ico_xl ico_home"></i>
+                        <span class="sr_only">홈</span>
+                      </span>
+                      <span>ico ico_xl ico_home</span>
+                    </li>
+                    <li class="bg_gray">
+                      <span class="icon_area">
+                        <i class="ico ico_lg ico_home bg_white"></i>
+                        <span class="sr_only">홈</span>
+                      </span>
+                      <span>ico ico_lg ico_home</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <pre class="brush:html" title="HTML">
+              &lt;!-- [웹접근성] 특정 의미를 지닌 아이콘 단독 활용시 .sr_only 대체텍스트 병렬 마크업 --&gt;
+              &lt;i class="ico ico_xl ico_home"&gt;&lt;/i&gt;
+              &lt;span class="sr_only"&gt;홈&lt;/span&gt;
+            </pre>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="button">
+              버튼 <small class="txt_primary">.btn.btn_*</small>
+            </h3>
+            <div class="box_html_guide">
+              <ul class="list list1">
+                <li>a, button 태그만 사용 (input 지양)</li>
+                <li>.btn 기본 사이즈는 .btn_lg 사이즈와 동일 텍스트필드 기본 height와 동일함</li>
+                <li class="txt_red">
+                  [웹접근성] 새창 제공 링크에
+                  <code class="code">target="_blank"</code> 필수
+                </li>
+              </ul>
+            </div>
+
+            <div class="examples MAT20">
+              <p class="MAB10">형태구분 - 기본형(btn) / outline형(btn_outline) / 타원형(round) / outline + 타원형(btn_outline round)
+              </p>
+              <div class="txt_l mt_0">
+                <button type="button" class="btn">btn</button>
+                <a href="javascript:void(0);" class="btn">btn</a>
+                <button type="button" class="btn btn_outline">btn_outline</button>
+                <a href="javascript:void(0);" class="btn btn_outline">btn_outline</a>
+                <button type="button" class="btn round">round</button>
+                <a href="javascript:void(0);" class="btn round">round</a>
+                <button type="button" class="btn btn_outline round">btn_outline round</button>
+                <a href="javascript:void(0);" class="btn btn_outline round">btn_outline round</a>
+              </div>
+
+              <p class="MAT20 MAB10">크기구분(btn btn_xl)</p>
+              <div class="txt_l mt_0">
+                <a href="javascript:void(0);" class="btn btn_xl">btn_xl</a>
+                <a href="javascript:void(0);" class="btn btn_lg">btn_lg</a>
+                <a href="javascript:void(0);" class="btn btn_md">btn_md</a>
+                <a href="javascript:void(0);" class="btn btn_sm">btn_sm</a>
+                <a href="javascript:void(0);" class="btn btn_xs">btn_xs</a>
+              </div>
+
+              <p class="MAT20 MAB10">색상구분(btn btn_색상)</p>
+              <div class="txt_l mt_0">
+                <a href="javascript:void(0);" class="btn btn_primary">btn_primary</a>
+                <a href="javascript:void(0);" class="btn btn_demiprimary">btn_demiprimary</a>
+                <a href="javascript:void(0);" class="btn btn_lightprimary">btn_lightprimary</a>
+                <a href="javascript:void(0);" class="btn btn_gray">btn_gray</a>
+                <a href="javascript:void(0);" class="btn btn_lightgray">btn_lightgray</a>
+                <a href="javascript:void(0);" class="btn btn_red">btn_red</a>
+                <a href="javascript:void(0);" class="btn btn_green">btn_green</a>
+              </div>
+              <p class="MAT20 MAB10">아이콘 버튼 (btn_icon) / icon_only형(btn_icon ico_only)</p>
+              <div class="txt_l mt_0">
+                <button type="button" class="btn btn_icon btn_primary">
+                  <i class="ico ico_search bg_white"></i>
+                  <span>검색</span>
+                </button>
+                <a href="javascript:void(0);" class="btn btn_icon btn_demiprimary">
+                  <i class="ico ico_plus bg_white"></i>
+                  <span>추가</span>
+                </a>
+                <a href="javascript:void(0);" class="btn btn_icon btn_outline btn_primary">
+                  <span>다운로드</span>
+                  <i class="ico ico_download"></i>
+                </a>
+                <button type="button" class="btn btn_icon ico_only btn_outline btn_lg">
+                  <i class="ico ico_search"></i>
+                  <span class="sr_only">검색</span>
+                </button>
+                <button type="button" class="btn btn_icon ico_only btn_lg btn_green">
+                  <i class="ico ico_download bg_white"></i>
+                  <span class="sr_only">다운로드</span>
+                </button>
+                <button type="button" class="btn btn_icon ico_only btn_gray">
+                  <i class="ico ico_plus bg_white"></i>
+                  <span class="sr_only">추가</span>
+                </button>
+              </div>
+
+            </div>
+
+            <pre class="brush:html" title="HTML">
+              &lt;!-- fill 기본형(btn) --&gt;
+              &lt;button type="button" class="btn"&gt;&lt;/button&gt;
+              &lt;a href="javascript:void(0);" class="btn"&gt;&lt;/a&gt;
+
+              &lt;!-- outline형(btn btn_outline) --&gt;
+              &lt;button type="button" class="btn btn_outline"&gt;&lt;/button&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_outline"&gt;&lt;/a&gt;
+
+              &lt;!-- 타원형(btn round) --&gt;
+              &lt;button type="button" class="btn round"&gt;&lt;/button&gt;
+              &lt;a href="javascript:void(0);" class="btn round"&gt;&lt;/a&gt;
+
+              &lt;!-- outline형 + 타원형(btn btn_outline round) --&gt;
+              &lt;button type="button" class="btn btn_outline round"&gt;&lt;/button&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_outline round"&gt;&lt;/a&gt;
+
+              &lt;!-- 크기구분(btn btn_xl) --&gt;
+              &lt;button type="button" class="btn btn_xl"&gt;&lt;/button&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_lg"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_md"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_sm"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_xs"&gt;&lt;/a&gt;
+
+              &lt;!-- 색상구분(btn btn_색상) --&gt;                
+              &lt;button type="button" class="btn"&gt;btn&lt;/button&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_primary"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_demiprimary"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_lightprimary"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_gray"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_lightgray"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_red"&gt;&lt;/a&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_green"&gt;&lt;/a&gt;
+
+              &lt;!-- 아이콘 버튼 (btn_icon) --&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_icon"&gt;
+                &lt;i class="ico ico_home bg_white"&gt;&lt;/i&gt;
+                &lt;span&gt;홈&lt;/span&gt;
+              &lt;/a&gt;
+              &lt;!-- icon_only형(btn_icon ico_only) --&gt;
+              &lt;a href="javascript:void(0);" class="btn btn_icon ico_only"&gt;
+                &lt;i class="ico ico_home bg_white"&gt;&lt;/i&gt;
+                &lt;span&gt;홈&lt;/span&gt;
+              &lt;/a&gt;
+            </pre>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="accordion">
+              아코디언
+              <small class="txt_primary">.accordion</small>
+            </h3>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <h4 class="tit2">details tag</h4>
+                  <div class="examples">
+                    <div class="accordion">
+                      <details>
+                        <summary>기본 구조1</summary>
+                        <div class="acc_con">
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                        </div>
+                      </details>
+                      <details>
+                        <summary>기본 구조2</summary>
+                        <div class="acc_con">
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                        </div>
+                      </details>
+                      <details>
+                        <summary>기본 구조3</summary>
+                        <div class="acc_con">
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                    &lt;div class="accordion"&gt;
+                      &lt;details&gt;
+                        &lt;summary&gt;기본 구조1&lt;/summary&gt;
+                        &lt;div class="acc_con"&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/details&gt;
+                      &lt;details&gt;
+                        &lt;summary&gt;기본 구조2&lt;/summary&gt;
+                        &lt;div class="acc_con"&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/details&gt;
+                      &lt;details&gt;
+                        &lt;summary&gt;기본 구조3&lt;/summary&gt;
+                        &lt;div class="acc_con"&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/details&gt;
+                    &lt;/div&gt;
+                  </pre>
+                </div>
+
+                <div class="col_item">
+                  <h4 class="tit2">USE JavaScript</h4>
+                  <div class="examples">
+                    <ul class="accordion">
+                      <li>
+                        <div class="acc_head"><a href="javascript:void(0)">기본 구조1</a></div>
+                        <div class="acc_con">
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="acc_head"><a href="javascript:void(0)">기본 구조2</a></div>
+                        <div class="acc_con">
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="acc_head"><a href="javascript:void(0)">기본 구조3</a></div>
+                        <div class="acc_con">
+                          <p>상세내용</p>
+                          <p>상세내용</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                    &lt;ul class="accordion"&gt;
+                      &lt;li&gt;
+                        &lt;div class="acc_head"&gt;&lt;a href="javascript:void(0)"&gt;기본 구조1&lt;/a&gt;&lt;/div&gt;
+                        &lt;div class="acc_con"&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;div class="acc_head"&gt;&lt;a href="javascript:void(0)"&gt;기본 구조2&lt;/a&gt;&lt;/div&gt;
+                        &lt;div class="acc_con"&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;div class="acc_head"&gt;&lt;a href="javascript:void(0)"&gt;기본 구조3&lt;/a&gt;&lt;/div&gt;
+                        &lt;div class="acc_con"&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                          &lt;p&gt;상세내용&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="guide_section">
+            <h3 class="tit_guide" id="tabmenu">
+              탭메뉴
+              <small class="txt_primary">.tab_menu</small>
+            </h3>
+            <div class="examples">
+              <div class="tab_menu">
+                <ul>
+                  <li>
+                    <a href="javascript:void(0);" class="current" data-tab="tab01" title="선택됨">tab_menu</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" data-tab="tab02">tab_menu</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <pre class="brush:html" title="HTML">
+              &lt;div class="tab_menu"&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;
+                    &lt;a href="javascript:void(0);" class="current" data-tab="tab01" title="선택됨"&gt;tab_menu&lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a href="javascript:void(0);" data-tab="tab02"&gt;tab_menu&lt;/a&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            </pre>
+          </div>
+          <div class="guide_section">
+            <h3 class="tit_guide" id="form">입력폼</h3>
+
+            <div class="box_html_guide">
+              <ul class="list list1">
+                <li class="txt_red">[웹접근성] id와 label 매칭 필수</li>
+              </ul>
+            </div>
+
+            <h4 class="tit2 MAT50">텍스트 입력 필드 .tf</h4>
+            <div class="examples">
+              <div>
+                <label>label > input
+                  <input type="text" class="tf" placeholder="placeholder" title="" />
+                </label>
+                <label>
+                  <strong class="tf_t">label > .tf_t + input</strong>
+                  <input type="text" class="tf" placeholder="placeholder" title="" value="input text value" />
+                </label>
+                <label class="tf_t" for="inputText01">label + input</label>
+                <input type="text" class="tf" id="inputText01" placeholder="placeholder" />
+                <label class="tf_t" for="inputText04">disabled</label>
+                <input type="text" class="tf" id="inputText04" placeholder="disabled" title="" value="" disabled />
+                <label class="MAT16">readonly
+                  <input type="text" class="tf" placeholder="readonly" title="" value="" readonly />
+                </label>
+                <label>기간 선택
+                  <input type="date" class="tf" placeholder="날짜를 선택해주세요." title="" value="" required />
+                </label>
+                <strong class="tf_t MAT16">기간 선택 value</strong>
+                <input type="date" class="tf" placeholder="날짜를 선택해주세요." title="기간 선택" value="2023-09-07"
+                  min="2023-09-07" max="2023-12-25" required />
+                <strong class="tf_t MAT16">기간 선택 disabled value</strong>
+                <input type="date" class="tf" placeholder="날짜를 선택해주세요." title="기간 선택" value="2023-09-07"
+                  min="2023-09-07" max="2023-12-25" required disabled />
+                <strong class="tf_t">textarea</strong>
+                <textarea class="tf" rows="2" placeholder="내용은 한글 1000자, 영문 2000자까지 입력 가능합니다." title=""></textarea>
+              </div>
+            </div>
+            <pre class="brush:html" title="HTML">
+              &lt;!-- input text --&gt;
+              &lt;label&gt;label &gt; input
+              &lt;input type="text" class="tf" placeholder="placeholder" title="" /&gt;
+              &lt;/label&gt;
+
+              &lt;label&gt;
+                &lt;strong class="tf_t"&gt;label &gt; .tf_t + input&lt;/strong&gt;
+                &lt;input type="text" class="tf" placeholder="placeholder" title="" value="input text value" /&gt;
+              &lt;/label&gt;
+
+              &lt;label class="tf_t" for="inputText01"&gt;label + input&lt;/label&gt;
+              &lt;input type="text" class="tf" id="inputText01" placeholder="placeholder" /&gt;
+
+              &lt;label class="tf_t" for="inputText04"&gt;disabled&lt;/label&gt;
+              &lt;input type="text" class="tf" id="inputText04" placeholder="disabled" title="" value="" disabled /&gt;
+
+              &lt;label class="MAT16"&gt;readonly
+                &lt;input type="text" class="tf" placeholder="readonly" title="" value="" readonly /&gt;
+              &lt;/label&gt;
+
+              &lt;label&gt;기간 선택
+                &lt;input type="date" class="tf" placeholder="날짜를 선택해주세요." title="" value="" required /&gt;
+              &lt;/label&gt;
+
+              &lt;strong class="tf_t MAT16"&gt;기간 선택&lt;/strong&gt;
+              &lt;input type="date" class="tf" placeholder="날짜를 선택해주세요." title="" value="" min="2023-09-07" max="2023-12-25" required /&gt;
+
+              &lt;input type="date" class="tf" placeholder="날짜를 선택해주세요." title="" value="2023-09-07" min="20s23-09-07" max="2023-12-25" required disabled /&gt;
+
+              &lt;strong class="tf_t"&gt;textarea&lt;/strong&gt;
+              &lt;textarea class="tf" rows="2" placeholder="내용은 한글 1000자, 영문 2000자까지 입력 가능합니다." title=""&gt;&lt;/textarea&gt;
+            </pre>
+
+            <h4 class="tit2 MAT20">셀렉트박스 .opt</h4>
+            <div class="examples">
+              <select class="opt">
+                <option selected>selectbox</option>
+                <option>항목1 항목1 항목1 항목1 항목1 항목1</option>
+                <option>항목2</option>
+              </select>
+              <select class="opt" disabled>
+                <option selected>:disabled</option>
+                <option>항목1</option>
+                <option>항목2</option>
+              </select>
+            </div>
+            <pre class="brush:html" title="HTML">
+							&lt!-- selectbox --&gt;
+							&lt;select class="opt"&gt;
+								&lt;option selected&gt;선택&lt;/option&gt;
+								&lt;option&gt;항목1&lt;/option&gt;
+								&lt;option&gt;항목2&lt;/option&gt;
+							&lt;/select&gt;
+            </pre>
+
+            <h4 class="tit2 MAT20">버튼과 함께 사용 .form_group</h4>
+            <ul class="list list1">
+              <li>
+                아래 마크업 구조 사용시 input 너비 + 버튼 너비 합이 100%가
+                되도록 자동 계산됨
+              </li>
+            </ul>
+            <div class="examples">
+              <div class="form_group">
+                <input type="text" class="tf" placeholder="placeholder" />
+                <button type="button" class="btn btn_icon ico_only btn_lg btn_primary">
+                  <i class="ico ico_search bg_white"></i>
+                </button>
+              </div>
+              <div class="form_group">
+                <input type="text" class="tf" placeholder="placeholder" />
+                <button type="button" class="btn btn_lg btn_default">버튼</button>
+                <a href="javascript:void(0);" class="btn btn_lg btn_primary" target="_blank">.btn_lg</a>
+              </div>
+              <strong class="tf_t">출입기간<span class="required">필수</span></strong>
+              <div class="form_group">
+                <input type="text" class="tf wd20" placeholder="placeholder" />
+                <input type="text" class="tf" placeholder="placeholder" />
+                <select class="opt">
+                  <option selected>selectbox</option>
+                  <option>항목1 항목1 항목1 항목1 항목1 항목1</option>
+                  <option>항목2</option>
+                </select>
+              </div>
+              <label class="tf_t" for="date01">출입기간<span class="required">필수</span></label>
+              <div class="form_group">
+                <input type="date" class="tf" id="date01" placeholder="날짜를 선택해주세요." required="" title="출입기간 시작 날짜"
+                  value="">
+                <span class="dashed">~</span>
+                <input type="date" class="tf" placeholder="날짜를 선택해주세요." title="출입기간 종료 날짜" value="" required>
+              </div>
+
+            </div>
+            <pre class="brush:html" title="HTML">
+							&lt;!-- form_group (width full) --&gt;
+							&lt;div class="form_group"&gt;
+								&lt;input type="text" class="tf" id="" placeholder=""&gt;
+								&lt;button type="button" class="btn btn_primary"&gt;&lt;/button&gt;								
+							&lt;/div&gt;						
+            </pre>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="formEtc">체크박스 / 라디오</h3>
+
+            <h4 class="tit2 MAT20">checkbox</h4>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <p class="MAB10">
+                    .check_item : 일반형
+                  </p>
+                  <div class="examples">
+                    <span class="check_item">
+                      <input type="checkbox" id="inputCheck2_1" name="" />
+                      <label for="inputCheck2_1">체크박스 기본</label>
+                    </span>
+                    <span class="check_item">
+                      <input type="checkbox" id="inputCheck2_2" name="" checked />
+                      <label for="inputCheck2_2">체크박스 체크</label>
+                    </span>
+                    <span class="check_item">
+                      <input type="checkbox" id="inputCheck2_3" name="" disabled />
+                      <label for="inputCheck2_3">disabled</label>
+                    </span>
+                    <span class="check_item">
+                      <input type="checkbox" id="inputCheck2_4" name="" disabled checked />
+                      <label for="inputCheck2_4">disabled checked</label>
+                    </span>
+                    <span class="check_item single">
+                      <input type="checkbox" id="inputCheck2_5" name="" />
+                      <label for="inputCheck2_5">checked</label>
+                    </span>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                    &lt;span class="check_item"&gt;
+                      &lt;input type="checkbox" id="inputCheck2_1" name="" /&gt;
+                      &lt;label for="inputCheck2_1">체크박스 기본&lt;/label&gt;
+                    &lt;/span&gt;
+                    &lt;span class="check_item"&gt;
+                      &lt;input type="checkbox" id="inputCheck2_2" name="" checked /&gt;
+                      &lt;label for="inputCheck2_2">체크박스 체크&lt;/label&gt;
+                    &lt;/span&gt;
+                    &lt;span class="check_item"&gt;
+                      &lt;input type="checkbox" id="inputCheck2_3" name="" disabled /&gt;
+                      &lt;label for="inputCheck2_3">disabled&lt;/label&gt;
+                    &lt;/span>
+                    &lt;span class="check_item"&gt;
+                      &lt;input type="checkbox" id="inputCheck2_4" name="" disabled checked /&gt;
+                      &lt;label for="inputCheck2_4">disabled checked&lt;/label&gt;
+                    &lt;/span&gt;
+                    &lt;span class="check_item single"&gt;
+                      &lt;input type="checkbox" id="inputCheck2_5" name="" /&gt;
+                      &lt;label for="inputCheck2_5">checked&lt;/label&gt;
+                    &lt;/span&gt;
+                  </pre>
+                </div>
+                <div class="col_item">
+                  <p class="MAB10">.check_switch : 토글 버튼</p>
+                  <div class="examples">
+                    <!-- 텍스트 비노출형 -->
+                    <span class="check_switch">
+                      <input type="checkbox" id="btn_toggle" />
+                      <label for="btn_toggle">
+                        <span class="sr_only">
+                          <span class="txt_uncheck">해제</span>
+                          <span class="txt_checked">선택</span>
+                        </span>
+                      </label>
+                    </span>
+                    <!-- 텍스트 노출형 -->
+                    <span class="check_switch">
+                      <input type="checkbox" id="inputCheckSwitch2" checked />
+                      <label for="inputCheckSwitch2">
+                        <span class="txt_uncheck">해제</span>
+                        <span class="txt_checked">선택</span>
+                      </label>
+                    </span>
+                  </div>
+                  <pre class="brush:html" title="HTML">
+                      &lt;!-- 텍스트 비노출형 --&gt;
+                      &lt;span class="check_switch"&gt;
+                        &lt;input type="checkbox" id="btn_toggle" checked&gt;
+                          &lt;label for="btn_toggle"&gt;
+                          &lt;span class="sr_only"&gt;
+                            &lt;span class="txt_uncheck"&gt;해제&lt;/span&gt;
+                            &lt;span class="txt_checked"&gt;선택&lt;/span&gt;
+                          &lt;/span&gt;
+                        &lt;/label&gt;
+                      &lt;/span&gt;
+                      
+                      &lt;!-- 텍스트 노출형 --&gt;
+                      &lt;span class="check_switch"&gt;                        
+                        &lt;input type="checkbox" id="inputCheckSwitch2" checked&gt;
+                        &lt;label for="inputCheckSwitch2"&gt;
+                          &lt;span class="txt_uncheck"&gt;해제&lt;/span&gt;
+                          &lt;span class="txt_checked"&gt;선택&lt;/span&gt;
+                        &lt;/label&gt;
+                      &lt;/div&gt;
+										</pre>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="tit2 MAT50">radio</h4>
+            <div class="examples">
+              <span class="check_item">
+                <input type="radio" id="inputCheck1_1" name="inputCheck1" />
+                <label for="inputCheck1_1">라디오 기본</label>
+              </span>
+              <span class="check_item">
+                <input type="radio" id="inputCheck1_2" name="inputCheck1" checked />
+                <label for="inputCheck1_2">라디오 체크</label>
+              </span>
+              <span class="check_item">
+                <input type="radio" id="inputCheck1_3" name="inputCheckNew2" disabled />
+                <label for="inputCheck1_3">disabled</label>
+              </span>
+              <span class="check_item">
+                <input type="radio" id="inputCheck1_4" name="inputCheckNew2" disabled checked />
+                <label for="inputCheck1_4">disabled checked</label>
+              </span>
+              <span class="check_item single">
+                <input type="radio" id="inputCheck1_5" name="inputCheckNew3" />
+                <label for="inputCheck1_5">single</label>
+              </span>
+            </div>
+            <pre class="brush:html" title="HTML">
+              &lt;!-- radio --&gt;
+              &lt;span class="check_item"&gt;
+                &lt;input type="radio" id="inputCheck1_1" name="inputCheck1" /&gt;
+                &lt;label for="inputCheck1_1">라디오 기본&lt;/label&gt;
+              &lt;/span&gt;
+              &lt;span class="check_item"&gt;
+                &lt;input type="radio" id="inputCheck1_2" name="inputCheck1" checked /&gt;
+                &lt;label for="inputCheck1_2">라디오 체크&lt;/label&gt;
+              &lt;/span&gt;
+              &lt;span class="check_item"&gt;
+                &lt;input type="radio" id="inputCheck1_3" name="inputCheckNew2" disabled /&gt;
+                &lt;label for="inputCheck1_3">disabled&lt;/label&gt;
+              &lt;/span&gt;
+              &lt;span class="check_item"&gt;
+                &lt;input type="radio" id="inputCheck1_4" name="inputCheckNew2" disabled checked /&gt;
+                &lt;label for="inputCheck1_4">disabled checked&lt;/label&gt;
+              &lt;/span&gt;
+              &lt;span class="check_item single"&gt;
+                &lt;input type="radio" id="inputCheck1_5" name="inputCheckNew3" /&gt;
+                &lt;label for="inputCheck1_5">single&lt;/label&gt;
+              &lt;/span&gt;
+            </pre>
+          </div>
+
+          <div class="guide_section">
+            <h3 class="tit_guide" id="modal_popup">
+              모달 팝업
+              <small class="txt_primary">.modal_popup</small>
+            </h3>
+            <div class="box_html_guide">
+              <ul class="list list1">
+                <li>
+                  [웹 접근성] 키보드 포커싱을 위해 호출 및 닫기 버튼은 아래
+                  가이드 사용 필수
+                </li>
+              </ul>
+            </div>
+            <div class="cont_row">
+              <div class="inner">
+                <div class="col_item">
+                  <h4 class="tit2 MAT30 MAB0">레이어팝 모달</h4>
+                  <div class="examples mt_0">
+                    <button type="button" class="btn btn_sm btn_primary open-lp" aria-controls="mp1">full</button>
+                    <button type="button" class="btn btn_sm btn_primary open-lp" aria-controls="mp2">modal</button>
+                  </div>
+
+                  <pre class="brush:html" title="HTML : 레이어팝 모달 마크업">
+                    &lt;div class="modal_popup" id="mp1" role="dialog" aria-modal="true" aria-labelledby=""&gt;
+                      &lt;div class="popup_inner"&gt;
+                        &lt;button type="button" aria-label="닫기" class="btn_close_popup"&gt;닫기&lt;/button&gt;
+                        &lt;div class="popup_header"&gt;
+                          &lt;h3 class="popup_tit"&gt;팝업 타이틀&lt;/h3&gt;
+                        &lt;/div&gt;
+                        &lt;div class="popup_body"&gt;
+                          &lt;h4 class="tit3"&gt;본문 타이틀&lt;/h4&gt;                        
+                          &lt;p&gt;신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다&lt;/p&gt;                        
+                        &lt;/div&gt;
+                        &lt;div class="btn_wrap"&gt;
+                          &lt;a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close" aria-label="취소 닫기" &gt;취소&lt;/a&gt;
+                          &lt;a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close" aria-label="확인 닫기"&gt;확인&lt;/a&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  </pre>
+                </div>
+              </div>
+
+              <div class="col_item">
+                <h4 class="tit2 MAT30 MAB0">바텀시트 모달</h4>
+                <div class="examples mt_0">
+                  <button type="button" class="btn btn_sm btn_primary open-lp" aria-controls="mpb">Bottom
+                    Sheet</button>
+                  <button type="button" class="btn btn_sm btn_primary open-lp" aria-controls="mpb2">Bottom
+                    Sheet2</button>
+                </div>
+
+                <pre class="brush:html" title="HTML : 바텀시트 모달 마크업">
+                    &lt;div class="modal_popup bottom_sheet" id="mpb" role="dialog" aria-modal="true" aria-labelledby=""&gt;                      
+                      &lt;div class="popup_inner"&gt;
+                      &lt;div class="drag_handle"&gt;&lt;/div&gt;
+                        &lt;div class="popup_header"&gt;
+                          &lt;h3 class="popup_tit"&gt;팝업 타이틀&lt;/h3&gt;
+                        &lt;/div&gt;
+                        &lt;div class="popup_body"&gt;
+                          &lt;h4 class="tit3"&gt;본문 타이틀&lt;/h4&gt;                        
+                          &lt;p&gt;신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다&lt;/p&gt;                        
+                        &lt;/div&gt;
+                        &lt;div class="btn_wrap"&gt;
+                          &lt;a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close" aria-label="취소 닫기" &gt;취소&lt;/a&gt;
+                          &lt;a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close" aria-label="확인 닫기"&gt;확인&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;button type="button" aria-label="닫기" class="btn_close_popup"&gt;닫기&lt;/button&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  </pre>
+
+                <h4 class="tit2 MAT30 MAB0">모달 열기 및 닫기</h4>
+
+                <pre class="brush:html" title="HTML : 호출 및 닫기 버튼">
+                  &lt;!-- 버튼 클릭으로 열기 : .open_lp 클래스로 호출 대상은 aria-controls=""로 제어 --&gt;
+                  &lt;a href="javascript:void(0);" class="open_lp" aria-controls="mp1"&gt;&lt;/a&gt;
+                  &lt;button type="button" class="btn btn_sm btn_primary open_lp" aria-controls="mpb">modal_popup&gt;&lt;/button&gt;
+
+                  &lt;!-- 버튼 클릭으로 닫기 : .btn_close_popup ,.btn_wrap .pop_close 클래스로 닫음 dimed에 클릭 및 esc버튼으로도 닫힘 --&gt;
+                  &lt;button type="button" class="btn_close_popup"&gt;&lt;/button&gt;
+                </pre>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Modal Popup : .bottom_sheet -->
+        <div class="modal_popup bottom_sheet" id="mpb" role="dialog" aria-modal="true" aria-labelledby="">
+          <div class="popup_inner">
+            <div class="drag_handle"></div>
+            <div class="popup_header">
+              <h3 class="popup_tit">팝업 타이틀1</h3>
+            </div>
+            <div class="popup_body">
+              <h4 class="tit2">Bottom Sheet Modal</h4>
+              <p>Create a bottom sheet modal that functions similarly to Facebook modal using HTML CSS and
+                JavaScript.
+                This modal allows user to view its contents, drag it up or down, and close it. It also works on
+                touch-enabled devices. Lorem Ipsum are simply dummy text of there printing and typesetting industry.
+                Lorem new Ipsum has been the industryss standard dummy text ever since the 1500s, when an off
+                unknown printer tooks a galley of type and scrambled it to makes type spemen book It has survived
+                not only five centuries.</p>
+              <p>Create a bottom sheet modal that functions similarly to Facebook modal using HTML CSS and
+                JavaScript.
+                This modal allows user to view its contents, drag it up or down, and close it. It also works on
+                touch-enabled devices. Lorem Ipsum are simply dummy text of there printing and typesetting industry.
+                Lorem new Ipsum has been the industryss standard dummy text ever since the 1500s, when an off
+                unknown printer tooks a galley of type and scrambled it to makes type spemen book It has survived
+                not only five centuries.</p>
+            </div>
+            <div class="btn_wrap">
+              <a href="javascript:void(0);" aria-label="취소 닫기" class="btn btn_lg btn_lightprimary pop_close">취소</a>
+              <a href="javascript:void(0);" aria-label="확인 닫기" class="btn btn_lg btn_primary pop_close">확인</a>
+            </div>
+            <button type="button" class="btn_close_popup">닫기</button>
+          </div>
+        </div>
+        <!-- //Modal Popup : .bottom_sheet -->
+
+        <!-- Modal Popup : .bottom_sheet -->
+        <div class="modal_popup bottom_sheet no_dim" id="mpb2" role="dialog" aria-modal="true" aria-labelledby="">
+          <div class="popup_inner">
+            <!-- <div class="drag_handle"></div> -->
+            <div class="popup_header">
+              <h3 class="popup_tit">팝업 타이틀2</h3>
+            </div>
+            <div class="popup_body">
+              <h4 class="tit2">Bottom Sheet Modal</h4>
+              <p>Create a bottom sheet modal that functions similarly to Facebook modal using HTML CSS and
+                JavaScript.
+                This modal allows user to view its contents, drag it up or down, and close it. It also works on
+                touch-enabled devices. Lorem Ipsum are simply dummy text of there printing and typesetting industry.
+                Lorem new Ipsum has been the industryss standard dummy text ever since the 1500s, when an off
+                unknown printer tooks a galley of type and scrambled it to makes type spemen book It has survived
+                not only five centuries.</p>
+            </div>
+            <div class="btn_wrap">
+              <a href="javascript:void(0);" aria-label="취소 닫기" class="btn btn_lg btn_lightprimary pop_close">취소</a>
+              <a href="javascript:void(0);" aria-label="확인 닫기" class="btn btn_lg btn_primary pop_close">확인</a>
+            </div>
+            <button type="button" class="btn_close_popup">닫기</button>
+          </div>
+        </div>
+        <!-- //Modal Popup : .bottom_sheet -->
+
+        <div class="modal_popup" id="mp1" role="dialog" aria-modal="true" aria-labelledby="">
+          <div class="popup_inner">
+            <div class="popup_header">
+              <h3 class="popup_tit">팝업 타이틀</h3>
+            </div>
+            <div class="popup_body">
+              <h4 class="tit2">본문 타이틀</h4>
+              <button type="button" class="btn btn_sm btn_primary open-lp" aria-controls="mp2">modal_popup</button>
+              <p>신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다</p>
+              <p>신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까?
+                신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는
+                삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및
+                수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까?
+                신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는
+                삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및
+                수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청
+                하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까?
+                신청 후에는 삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는
+                삭제 및 수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및
+                수정이 불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이
+                불가합니다하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다
+              </p>
+            </div>
+            <div class="btn_wrap">
+              <a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close" aria-label="취소 닫기">취소</a>
+              <a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close" aria-label="확인 닫기">확인</a>
+            </div>
+            <button type="button" class="btn_close_popup" aria-label="닫기">닫기</button>
+          </div>
+        </div>
+
+        <!-- Modal Popup : .modal_popup -->
+        <div class="modal_popup" id="mp2" role="dialog" aria-modal="true" aria-labelledby="">
+          <div class="popup_inner">
+
+            <div class="popup_header">
+              <h3 class="popup_tit">팝업 타이틀</h3>
+            </div>
+            <div class="popup_body">
+              <h4 class="tit3">본문 타이틀</h4>
+              <button type="button" class="btn btn_sm btn_primary open-lp" aria-controls="mp3">modal_popup</button>
+              <p>신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다</p>
+            </div>
+            <div class="btn_wrap">
+              <a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close" aria-label="취소 닫기">취소</a>
+              <a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close" aria-label="확인 닫기">확인</a>
+            </div>
+            <button type="button" class="btn_close_popup" aria-label="닫기">닫기</button>
+          </div>
+        </div>
+        <!-- Modal Popup : .modal_popup -->
+
+        <!-- Modal Popup : .modal_popup -->
+        <div class="modal_popup" id="mp3" role="dialog" aria-modal="true" aria-labelledby="">
+          <div class="popup_inner">
+            <div class="popup_header">
+              <h3 class="popup_tit">팝업 타이틀</h3>
+            </div>
+            <div class="popup_body">
+              <h4 class="tit3">본문 타이틀</h4>
+              <p>mp3 신청 하시겠습니까? 신청 후에는 삭제 및 수정이 불가합니다</p>
+            </div>
+            <div class="btn_wrap">
+              <a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close" aria-label="취소 닫기">취소</a>
+              <a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close" aria-label="확인 닫기">확인</a>
+            </div>
+            <button type="button" class="btn_close_popup" aria-label="닫기">닫기</button>
+          </div>
+        </div>
+        <!-- Modal Popup : .modal_popup -->
+      </div>
+      <!-- //guide_section -->
+
+  </div>
+  <!--// container -->
+  </div>
+  <!-- // cont_body -->
+  </article>
+  <!-- // #content -->
+  </div>
+  <!-- // wrapper  -->
+</body>
+
+</html>

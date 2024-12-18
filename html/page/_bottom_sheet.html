@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta name="format-detection" content="telephone=no">
+	<title>바텀시트 레이아웃</title>
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="autocomplete" content="off" />
+	<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.min.css" />
+	<script type="text/javascript" charset="utf-8" src="../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../../js/jquery-ui.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../../js/common.js" defer></script>
+	<script type="text/javascript" src="../../js/swiper.min.js"></script>
+
+	<!-- 레이아웃 세팅(퍼블리싱 only) -->
+	<script src="../../js/ui_layout_setting.js" defer></script>
+
+	<!-- plugIn  -->
+
+	<script type="text/javascript">
+		$("document").ready(function () {
+			// ...
+			setTimeout(function () {
+				$("[aria-controls='mpb']").click();
+			}, 200)
+		});
+	</script>
+
+	<style>
+		/* style */
+	</style>
+</head>
+
+<body>
+	<!-- header Include 영역 -->
+	<div class="header"></div>
+	<!-- //header Include 영역 -->
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- content 영역-->
+
+		<!-- section -->
+		<div class="section">
+			<button class="btn btn_sm btn_primary open-lp" aria-controls="mpb">Show Bottom Sheet</button>
+			<button class="btn btn_sm btn_primary open-lp" aria-controls="mpb2">Show Bottom Sheet2</button>
+			<button class="btn btn_sm btn_primary open-lp" aria-controls="mpb3">Show Bottom Sheet3</button>
+			<button class="btn btn_sm btn_primary open-lp" aria-controls="mpb4">Show Bottom Sheet4</button>
+		</div>
+		<!-- //section -->
+
+
+		<!--// content 영역 -->
+
+	</div>
+	<!--// wrapper -->
+	<div class="bottom_area">
+		test
+	</div>
+
+	<!-- Modal Popup : .bottom_sheet -->
+	<div class="modal_popup bottom_sheet" id="mpb" role="dialog" aria-modal="true" aria-labelledby="">
+		<!-- <div class="sheet_overlay"></div> -->
+		<div class="popup_inner">
+			<div class="drag_handle"></div>
+			<div class="popup_header">
+				<h3 class="popup_tit">팝업 타이틀1</h3>
+			</div>
+			<div class="popup_body">
+				<ul class="pop_list">
+					<li>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+					</li>
+					<li>test222</li>
+					<li>test222</li>
+					<li>test222</li>
+					<li>test222</li>
+					<li>test222</li>
+					<li>test222</li>
+					<li>test222</li>
+
+				</ul>
+			</div>
+			<div class="btn_wrap">
+				<a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close">취소</a>
+				<a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close">확인</a>
+			</div>
+			<button type="button" class="btn_close_popup">닫기</button>
+		</div>
+	</div>
+	<!-- //Modal Popup : .bottom_sheet -->
+
+	<!-- Modal Popup : .bottom_sheet -->
+	<div class="modal_popup bottom_sheet no_dim" id="mpb2" role="dialog" aria-modal="true" aria-labelledby="">
+		<div class="popup_inner">
+			<div class="drag_handle"></div>
+			<div class="popup_header">
+				<h3 class="popup_tit">팝업 타이틀2</h3>
+			</div>
+			<div class="popup_body">
+				<h2>Bottom Sheet Modal</h2>
+				<p>body</p>
+				<p>body</p>
+				<p>body</p>
+				<p>body</p>
+				<p>body</p>
+			</div>
+			<!-- <div class="btn_wrap">
+				<a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close">취소</a>
+				<a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close">확인</a>
+			</div> -->
+			<button type="button" class="btn_close_popup">닫기</button>
+		</div>
+	</div>
+	<!-- //Modal Popup : .bottom_sheet -->
+
+	<!-- Modal Popup : .bottom_sheet -->
+	<div class="modal_popup bottom_sheet" id="mpb3" role="dialog" aria-modal="true" aria-labelledby="">
+		<!-- <div class="sheet_overlay"></div> -->
+		<div class="popup_inner">
+			<div class="drag_handle">
+				<span>test</span>
+			</div>
+			<div class="popup_body">
+				<h2>Bottom Sheet Modal</h2>
+				<p>body</p>
+				<p>body</p>
+				<p>body</p>
+				<p>body</p>
+				<p>body</p>
+			</div>
+			<!-- <div class="btn_wrap">
+				<a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close">취소</a>
+				<a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close">확인</a>
+			</div> -->
+			<!-- <button type="button" class="btn_close_popup">닫기</button> -->
+		</div>
+	</div>
+	<!-- //Modal Popup : .bottom_sheet -->
+
+	<!-- Modal Popup : .bottom_sheet -->
+	<div class="modal_popup bottom_sheet" id="mpb4" role="dialog" aria-modal="true" aria-labelledby="">
+		<!-- <div class="sheet_overlay"></div> -->
+		<div class="popup_inner">
+			<div class="drag_handle">
+				<span>test</span>
+			</div>
+			<!-- <div class="popup_header">
+				<h3 class="popup_tit">팝업 타이틀1</h3>
+			</div> -->
+			<div class="popup_body">
+				<ul class="pop_list">
+					<li>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+					</li>
+					<li>test333</li>
+					<li>test333</li>
+					<li>test333</li>
+					<li>test333</li>
+					<li>test333</li>
+					<li>test333</li>
+					<li>test333</li>
+
+				</ul>
+			</div>
+			<!-- <div class="btn_wrap">
+				<a href="javascript:void(0);" class="btn btn_lg btn_lightprimary pop_close">취소</a>
+				<a href="javascript:void(0);" class="btn btn_lg btn_primary pop_close">확인</a>
+			</div> -->
+			<!-- <button type="button" class="btn_close_popup">닫기</button> -->
+		</div>
+	</div>
+	<!-- //Modal Popup : .bottom_sheet -->
+
+	<!-- footer Include 영역 -->
+	<div class="footer"></div>
+	<!--// footer Include 영역 -->
+</body>
+
+</html>
